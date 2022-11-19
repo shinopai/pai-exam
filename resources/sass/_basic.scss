@@ -1,0 +1,68 @@
+/* basic style */
+* {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+body,
+html {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  font-size: 1em;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+li {
+  font-size: 1em;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+  display: block;
+}
+figure {
+  margin: 0;
+}
+option {
+  font-size: 1em;
+}
+
+/* basic class */
+.flex {
+  display: flex;
+}
+.contents {
+  display: contents;
+}
+
+/* breakpoints */
+$breakpoints: (
+  "w-960": "screen and (max-width: 960px)",
+  "w-768": "screen and (max-width: 768px)",
+  "w-520": "screen and (max-width: 520px)",
+) !default;
+
+/* mixin */
+/* media query */
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* font size 12px*/
+@mixin fs-12 {
+  font-size: clamp(1rem, 0.922rem + 0.39vw, 1.2rem);
+}
+
+/* font size 14px */
+@mixin fs-14 {
+  font-size: clamp(1.2rem, 1.122rem + 0.39vw, 1.4rem);
+}

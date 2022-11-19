@@ -1,0 +1,61 @@
+// auth form
+.auth-form {
+  &__logo {
+    width: 250px;
+    margin: 0 auto;
+  }
+  &__wrap {
+    padding: 30px;
+  }
+  &__item {
+    margin-bottom: 15px;
+    div {
+      &:first-child {
+        margin: 0 auto;
+      }
+    }
+  }
+  &__input {
+    background-color: initial;
+    box-shadow: 2px 3px 4px #f8fafc;
+    padding: 10px;
+    @include fs-12;
+  }
+  &__btn {
+    border: 1px solid #009ce5;
+    background-color: transparent;
+    color: #009ce5;
+    @include fs-14;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* error message */
+.err-msg {
+  @include fs-12;
+  strong {
+    font-size: 1em;
+  }
+}
+
+/* nav bar */
+.navbar {
+  padding: 10px;
+  &__inner {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    font-size: clamp(1.8rem, 1.722rem + 0.39vw, 2rem);
+  }
+  &__nav {
+    column-gap: 10px;
+    @include fs-14;
+  }
+}
