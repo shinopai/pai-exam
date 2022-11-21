@@ -1,3 +1,7 @@
 @extends('layouts.admin') @section('content')
-<div class="list"></div>
+<ul>
+  <li>
+    <a href="{{ route('exams.index') }}">検定一覧</a>
+  </li>
+</ul>
 @endsection

@@ -3258,6 +3258,8 @@ function withinMaxClamp(min, value, max) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main */ "./resources/js/main.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_main__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -3271,6 +3273,11 @@ __webpack_require__.r(__webpack_exports__);
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
+
+/**
+ * js main file
+ */
+
 
 /***/ }),
 
@@ -3320,6 +3327,29 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/***/ (() => {
+
+// formの値リセット
+var cancelForm = function cancelForm() {
+  document.examForm.reset();
+};
+
+// 確認画面での内容リセット
+var cancelInput = function cancelInput() {
+  if (confirm('内容をリセットして宜しいですか？')) {
+    window.sessionStorage.clear();
+    window.location.href = 'http://localhost:8080/admin/exams/create';
+  }
+};
+window.cancelInput = cancelInput;
+window.cancelForm = cancelForm;
 
 /***/ }),
 
