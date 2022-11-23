@@ -1,5 +1,7 @@
 @extends('layouts.admin') @section('content')
 <div class="exam-list">
+  <!-- モーダル用オーバーレイ -->
+  <div id="modal_overlay"></div>
   <div class="wrap">
     <div class="exam-list__inner">
       <div class="exam-list__head flex">
@@ -20,9 +22,13 @@
             <h2 class="title">{{ $exam->title }}</h2>
             <div class="btns flex">
               <button class="btn">受講生管理</button>
-              <button class="btn">検定詳細</button>
+              <button class="btn detail-modal-open" data-id="{{ $exam->id }}">検定詳細</button>
+              <!-- 検定詳細モーダル内容 -->
+              @include('partial.detail_modal', ['exam' => $exam])
               <button class="btn">検定チケット</button>
-              <button class="btn delete">検定削除</button>
+              <button class="btn delete destroy-confirm-modal-open" data-id="{{ $exam->id }}">検定削除</button>
+              <!-- 削除確認モーダル内容 -->
+              @include('partial.destroy_confirm_modal', ['exam' => $exam])
             </div>
           </div>
         </div>

@@ -66,4 +66,11 @@ class ExamController extends Controller
             return redirect(route('exams.index'));
         }
     }
+
+    public function destroy(Exam $exam)
+    {
+        $exam->delete();
+
+        return redirect()->back();
+    }
 }

@@ -25,4 +25,5 @@ Route::prefix('admin')->group(function () {
     Route::post('/exams/post', [App\Http\Controllers\admin\ExamController::class, 'postValue'])->name('exams.post');
     Route::get('/exams/confirm', [App\Http\Controllers\admin\ExamController::class, 'confirm'])->name('exams.confirm');
     Route::post('/exams/official-post', [App\Http\Controllers\admin\ExamController::class, 'officialPost'])->name('exams.officialPost');
+    Route::delete('/exams/{exam}/destroy', [App\Http\Controllers\admin\ExamController::class, 'destroy'])->name('exams.destroy');
 });

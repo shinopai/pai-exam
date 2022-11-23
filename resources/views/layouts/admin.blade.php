@@ -102,5 +102,8 @@
         @yield('content')
       </main>
     </div>
+
+    <!-- script -->
+    <script src="{{ mix('js/app.js') }}"></script>
   </body>
 </html>

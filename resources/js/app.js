@@ -16,3 +16,8 @@ import './bootstrap';
  * js main file
  */
 import './main';
+
+/**
+ * jquery main file
+ */
+import './jquery';
